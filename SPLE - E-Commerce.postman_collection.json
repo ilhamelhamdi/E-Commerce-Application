@@ -1,0 +1,3099 @@
+{
+	"info": {
+		"_postman_id": "fe8a8ec1-9c91-4251-af18-1eefba5192e6",
+		"name": "SPLE - E-Commerce",
+		"description": "Author: 2206081194 - Ilham Abdillah Alhamdi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30769450",
+		"_collection_link": "https://restless-station-193734.postman.co/workspace/My-Workspace~af1efa27-8d7f-49e2-89c4-940758449cff/collection/30769450-fe8a8ec1-9c91-4251-af18-1eefba5192e6?action=share&source=collection_link&creator=30769450"
+	},
+	"item": [
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "[ADMIN] Create Address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"street\": \"Margonda Raya\",\r\n  \"buildingName\": \"ABCDE\",\r\n  \"city\": \"Depok\",\r\n  \"state\": \"West Java\",\r\n  \"country\": \"Indonesia\",\r\n  \"pincode\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/address",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"address"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"street\": \"Margonda Raya\",\r\n  \"buildingName\": \"ABCDE\",\r\n  \"city\": \"Depok\",\r\n  \"state\": \"West Java\",\r\n  \"country\": \"Indonesia\",\r\n  \"pincode\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_API}}/api/admin/address",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"address"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:06:00 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"addressId\": 18,\n    \"street\": \"Margonda Raya\",\n    \"buildingName\": \"ABCDE\",\n    \"city\": \"Depok\",\n    \"state\": \"West Java\",\n    \"country\": \"Indonesia\",\n    \"pincode\": \"123456\"\n}"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Get Adresses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/addresses",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"addresses"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/admin/addresses",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"addresses"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:08:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"addressId\": 2,\n        \"street\": \"string\",\n        \"buildingName\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"country\": \"string\",\n        \"pincode\": \"string\"\n    },\n    {\n        \"addressId\": 4,\n        \"street\": \"Jl. Sudirman No. 12\",\n        \"buildingName\": \"Apartemen Mawar\",\n        \"city\": \"Jakarta\",\n        \"state\": \"DKI Jakarta\",\n        \"country\": \"Indonesia\",\n        \"pincode\": \"102201\"\n    },\n    {\n        \"addressId\": 5,\n        \"street\": \"Jl. Gatot Subroto No. 7\",\n        \"buildingName\": \"Rumah Hijau\",\n        \"city\": \"Bandung\",\n        \"state\": \"Jawa Barat\",\n        \"country\": \"Indonesia\",\n        \"pincode\": \"401234\"\n    },\n    {\n        \"addressId\": 6,\n        \"street\": \"Jl. Diponegoro No. 15\",\n        \"buildingName\": \"Pondok Ceria\",\n        \"city\": \"Surabaya\",\n        \"state\": \"Jawa Timur\",\n        \"country\": \"Indonesia\",\n        \"pincode\": \"602411\"\n    },\n    {\n        \"addressId\": 7,\n        \"street\": \"Jl. Ahmad Yani No. 22\",\n        \"buildingName\": \"Griya Indah\",\n        \"city\": \"Medan\",\n        \"state\": \"Sumatera Utara\",\n        \"country\": \"Indonesia\",\n        \"pincode\": \"201529\"\n    },\n    {\n        \"addressId\": 8,\n        \"street\": \"Jl. Imam Bonjol No. 10\",\n        \"buildingName\": \"Kost Harmoni\",\n        \"city\": \"Yogyakarta\",\n        \"state\": \"DI Yogyakarta\",\n        \"country\": \"Indonesia\",\n        \"pincode\": \"552223\"\n    },\n    {\n        \"addressId\": 9,\n        \"street\": \"Jl. Pemuda No. 5\",\n        \"buildingName\": \"Taman Sari Residence\",\n        \"city\": \"Semarang\",\n        \"state\": \"Jawa Tengah\",\n        \"country\": \"Indonesia\",\n        \"pincode\": \"501399\"\n    },\n    {\n        \"addressId\": 10,\n        \"street\": \"Jl. Kartini No. 3\",\n        \"buildingName\": \"Villa Asri\",\n        \"city\": \"Denpasar\",\n        \"state\": \"Bali\",\n        \"country\": \"Indonesia\",\n        \"pincode\": \"802321\"\n    },\n    {\n        \"addressId\": 11,\n        \"street\": \"Jl. Pattimura No. 8\",\n        \"buildingName\": \"Rumah Sejahtera\",\n        \"city\": \"Makassar\",\n        \"state\": \"Sulawesi Selatan\",\n        \"country\": \"Indonesia\",\n        \"pincode\": \"901345\"\n    },\n    {\n        \"addressId\": 12,\n        \"street\": \"Jl. Dipatiukur No. 9\",\n        \"buildingName\": \"Puri Citra\",\n        \"city\": \"Pontianak\",\n        \"state\": \"Kalimantan Barat\",\n        \"country\": \"Indonesia\",\n        \"pincode\": \"781223\"\n    },\n    {\n        \"addressId\": 13,\n        \"street\": \"Jl. Jenderal Sudirman No. 6\",\n        \"buildingName\": \"Grand Harmony\",\n        \"city\": \"Palembang\",\n        \"state\": \"Sumatera Selatan\",\n        \"country\": \"Indonesia\",\n        \"pincode\": \"301112\"\n    },\n    {\n        \"addressId\": 16,\n        \"street\": \"lalal\",\n        \"buildingName\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"country\": \"string\",\n        \"pincode\": \"string\"\n    },\n    {\n        \"addressId\": 17,\n        \"street\": \"123 Elm Street ABCD\",\n        \"buildingName\": \"Sunset Apartments\",\n        \"city\": \"Los Angeles\",\n        \"state\": \"California\",\n        \"country\": \"USA\",\n        \"pincode\": \"900001\"\n    },\n    {\n        \"addressId\": 18,\n        \"street\": \"Margonda Raya\",\n        \"buildingName\": \"ABCDE\",\n        \"city\": \"Depok\",\n        \"state\": \"West Java\",\n        \"country\": \"Indonesia\",\n        \"pincode\": \"123456\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Get Address By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/addresses/18",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"addresses",
+								"18"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/admin/addresses/18",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"addresses",
+										"18"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:10:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"addressId\": 18,\n    \"street\": \"Margonda Raya\",\n    \"buildingName\": \"ABCDE\",\n    \"city\": \"Depok\",\n    \"state\": \"West Java\",\n    \"country\": \"Indonesia\",\n    \"pincode\": \"123456\"\n}"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Update Address",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"street\": \"Margonda Raya - Updated\",\r\n  \"buildingName\": \"ABCDE\",\r\n  \"city\": \"Depok\",\r\n  \"state\": \"West Java\",\r\n  \"country\": \"Indonesia\",\r\n  \"pincode\": \"0987654\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/addresses/18",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"addresses",
+								"18"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"street\": \"Margonda Raya - Updated\",\r\n  \"buildingName\": \"ABCDE\",\r\n  \"city\": \"Depok\",\r\n  \"state\": \"West Java\",\r\n  \"country\": \"Indonesia\",\r\n  \"pincode\": \"0987654\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_API}}/api/admin/addresses/18",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"addresses",
+										"18"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:12:47 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"addressId\": 18,\n    \"street\": \"Margonda Raya - Updated\",\n    \"buildingName\": \"ABCDE\",\n    \"city\": \"Depok\",\n    \"state\": \"West Java\",\n    \"country\": \"Indonesia\",\n    \"pincode\": \"0987654\"\n}"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Delete Address By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/addresses/18",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"addresses",
+								"18"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/admin/addresses/18",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"addresses",
+										"18"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:14:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Address deleted succesfully with addressId: 18"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let response = pm.response.json();\r",
+									"if (response[\"jwt-token\"]) {\r",
+									"    pm.collectionVariables.set(\"token\", response[\"jwt-token\"]);\r",
+									"    console.log(\"JWT Token saved as collection variable:\", response[\"jwt-token\"]);\r",
+									"} else {\r",
+									"    pm.test(\"JWT Token not found in response\", function () {\r",
+									"        pm.expect(response[\"jwt-token\"]).to.exist;\r",
+									"    });\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Fitzgerald\",\r\n  \"lastName\": \"Thompson\",\r\n  \"mobileNumber\": \"0812345680\",\r\n  \"email\": \"user10@gmail.com\",\r\n  \"password\": \"user10\",\r\n  \"address\": {\r\n    \"addressId\": null,\r\n    \"street\": \"Jl. Jenderal Sudirman No. 6\",\r\n    \"buildingName\": \"Grand Harmony\",\r\n    \"city\": \"Palembang\",\r\n    \"state\": \"Sumatera Selatan\",\r\n    \"country\": \"Indonesia\",\r\n    \"pincode\": \"301112\"\r\n  },\r\n  \"cart\": null\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API}}/api/register",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let response = pm.response.json();\r",
+									"if (response[\"jwt-token\"]) {\r",
+									"    pm.collectionVariables.set(\"token\", response[\"jwt-token\"]);\r",
+									"    console.log(\"JWT Token saved as collection variable:\", response[\"jwt-token\"]);\r",
+									"} else {\r",
+									"    pm.test(\"JWT Token not found in response\", function () {\r",
+									"        pm.expect(response[\"jwt-token\"]).to.exist;\r",
+									"    });\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//   \"email\": \"admin2@gmail.com\",\r\n//   \"password\": \"admin2\"\r\n// }\r\n\r\n{\r\n  \"email\": \"user2@gmail.com\",\r\n  \"password\": \"user2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API}}/api/login",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "[ADMIN] Get Carts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/carts",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"carts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/admin/carts",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"carts"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:24:41 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"cartId\": 8,\n        \"totalPrice\": 0,\n        \"products\": []\n    },\n    {\n        \"cartId\": 9,\n        \"totalPrice\": 0,\n        \"products\": []\n    },\n    {\n        \"cartId\": 10,\n        \"totalPrice\": 0,\n        \"products\": []\n    },\n    {\n        \"cartId\": 11,\n        \"totalPrice\": 0,\n        \"products\": []\n    },\n    {\n        \"cartId\": 12,\n        \"totalPrice\": 0,\n        \"products\": []\n    },\n    {\n        \"cartId\": 14,\n        \"totalPrice\": 0,\n        \"products\": []\n    },\n    {\n        \"cartId\": 15,\n        \"totalPrice\": 0,\n        \"products\": []\n    },\n    {\n        \"cartId\": 13,\n        \"totalPrice\": 0,\n        \"products\": []\n    },\n    {\n        \"cartId\": 16,\n        \"totalPrice\": 0,\n        \"products\": []\n    },\n    {\n        \"cartId\": 6,\n        \"totalPrice\": 0,\n        \"products\": []\n    },\n    {\n        \"cartId\": 7,\n        \"totalPrice\": 41966.51,\n        \"products\": [\n            {\n                \"productId\": 2,\n                \"productName\": \"Men's Jacket\",\n                \"image\": \"default.png\",\n                \"description\": \"Stylish winter jacket for men\",\n                \"quantity\": 29,\n                \"price\": 8999,\n                \"discount\": 15,\n                \"specialPrice\": 7649.15\n            },\n            {\n                \"productId\": 3,\n                \"productName\": \"Non-Stick Cookware Set\",\n                \"image\": \"default.png\",\n                \"description\": \"Durable and easy-to-clean cookware\",\n                \"quantity\": 37,\n                \"price\": 12999,\n                \"discount\": 12,\n                \"specialPrice\": 11439.12\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "[PUBLIC] Get Items Cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/public/users/user2@gmail.com/carts/7",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"users",
+								"user2@gmail.com",
+								"carts",
+								"7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/public/users/user2@gmail.com/carts/7",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"public",
+										"users",
+										"user2@gmail.com",
+										"carts",
+										"7"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:26:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cartId\": 7,\n    \"totalPrice\": 41966.51,\n    \"products\": [\n        {\n            \"productId\": 2,\n            \"productName\": \"Men's Jacket\",\n            \"image\": \"default.png\",\n            \"description\": \"Stylish winter jacket for men\",\n            \"quantity\": 29,\n            \"price\": 8999,\n            \"discount\": 15,\n            \"specialPrice\": 7649.15\n        },\n        {\n            \"productId\": 3,\n            \"productName\": \"Non-Stick Cookware Set\",\n            \"image\": \"default.png\",\n            \"description\": \"Durable and easy-to-clean cookware\",\n            \"quantity\": 37,\n            \"price\": 12999,\n            \"discount\": 12,\n            \"specialPrice\": 11439.12\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "[PUBLIC] Add to Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/public/carts/7/products/16/quantity/3",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"carts",
+								"7",
+								"products",
+								"16",
+								"quantity",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/public/carts/7/products/3/quantity/3",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"public",
+										"carts",
+										"7",
+										"products",
+										"3",
+										"quantity",
+										"3"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:18:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cartId\": 7,\n    \"totalPrice\": 41966.51,\n    \"products\": [\n        {\n            \"productId\": 3,\n            \"productName\": \"Non-Stick Cookware Set\",\n            \"image\": \"default.png\",\n            \"description\": \"Durable and easy-to-clean cookware\",\n            \"quantity\": 37,\n            \"price\": 12999,\n            \"discount\": 12,\n            \"specialPrice\": 11439.12\n        },\n        {\n            \"productId\": 2,\n            \"productName\": \"Men's Jacket\",\n            \"image\": \"default.png\",\n            \"description\": \"Stylish winter jacket for men\",\n            \"quantity\": 29,\n            \"price\": 8999,\n            \"discount\": 15,\n            \"specialPrice\": 7649.15\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "[PUBLIC] Modify Cart Item",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/public/carts/7/products/3/quantity/1",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"carts",
+								"7",
+								"products",
+								"3",
+								"quantity",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/public/carts/7/products/3/quantity/1",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"public",
+										"carts",
+										"7",
+										"products",
+										"3",
+										"quantity",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:27:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cartId\": 7,\n    \"totalPrice\": 19088.270000000004,\n    \"products\": [\n        {\n            \"productId\": 2,\n            \"productName\": \"Men's Jacket\",\n            \"image\": \"default.png\",\n            \"description\": \"Stylish winter jacket for men\",\n            \"quantity\": 29,\n            \"price\": 8999,\n            \"discount\": 15,\n            \"specialPrice\": 7649.15\n        },\n        {\n            \"productId\": 3,\n            \"productName\": \"Non-Stick Cookware Set\",\n            \"image\": \"default.png\",\n            \"description\": \"Durable and easy-to-clean cookware\",\n            \"quantity\": 39,\n            \"price\": 12999,\n            \"discount\": 12,\n            \"specialPrice\": 11439.12\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "[PUBLIC] Remove Item from Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/public/carts/7/product/3",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"carts",
+								"7",
+								"product",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/public/carts/7/product/3",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"public",
+										"carts",
+										"7",
+										"product",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:27:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Product Non-Stick Cookware Set removed from the cart !!!"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "[PUBLIC] Get Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/public/categories?pageNumber=0&pageSize=20&sortBy=categoryId&sortOrder=asc",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "20"
+								},
+								{
+									"key": "sortBy",
+									"value": "categoryId"
+								},
+								{
+									"key": "sortOrder",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/public/categories?pageNumber=0&pageSize=10&sortBy=categoryId&sortOrder=asc",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"public",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "0"
+										},
+										{
+											"key": "pageSize",
+											"value": "10"
+										},
+										{
+											"key": "sortBy",
+											"value": "categoryId"
+										},
+										{
+											"key": "sortOrder",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:30:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"categoryId\": 1,\n            \"categoryName\": \"Electronics\"\n        },\n        {\n            \"categoryId\": 2,\n            \"categoryName\": \"Fashion\"\n        },\n        {\n            \"categoryId\": 3,\n            \"categoryName\": \"Home & Kitchen\"\n        },\n        {\n            \"categoryId\": 4,\n            \"categoryName\": \"Sports & Outdoors\"\n        },\n        {\n            \"categoryId\": 5,\n            \"categoryName\": \"Health & Beauty\"\n        },\n        {\n            \"categoryId\": 6,\n            \"categoryName\": \"Automotive\"\n        },\n        {\n            \"categoryId\": 7,\n            \"categoryName\": \"Books\"\n        },\n        {\n            \"categoryId\": 8,\n            \"categoryName\": \"Toys & Games\"\n        },\n        {\n            \"categoryId\": 9,\n            \"categoryName\": \"Pet Supplies\"\n        },\n        {\n            \"categoryId\": 10,\n            \"categoryName\": \"Groceries\"\n        }\n    ],\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"totalElements\": 16,\n    \"totalPages\": 2,\n    \"lastPage\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Add Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\": \"Digital Ticket\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/category",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"category"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryName\": \"Digital Ticket\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_API}}/api/admin/category",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"category"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:33:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"categoryId\": 17,\n    \"categoryName\": \"Digital Ticket\"\n}"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\": \"Digital Ticket and Voucher\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/categories/17",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"categories",
+								"17"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryName\": \"Digital Ticket and Voucher\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_API}}/api/admin/categories/17",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"categories",
+										"17"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:34:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"categoryId\": 17,\n    \"categoryName\": \"Digital Ticket and Voucher\"\n}"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/categories/17",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"categories",
+								"17"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/admin/categories/17",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"categories",
+										"17"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:35:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Category with categoryId: 17 deleted successfully !!!"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "[PUBLIC] Checkout Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/public/users/user2@gmail.com/carts/7/payments/QRIS/order",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"users",
+								"user2@gmail.com",
+								"carts",
+								"7",
+								"payments",
+								"QRIS",
+								"order"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/public/users/user2@gmail.com/carts/7/payments/QRIS/order",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"public",
+										"users",
+										"user2@gmail.com",
+										"carts",
+										"7",
+										"payments",
+										"QRIS",
+										"order"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:38:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orderId\": 2,\n    \"email\": \"user2@gmail.com\",\n    \"orderItems\": [\n        {\n            \"orderItemId\": 2,\n            \"product\": {\n                \"productId\": 2,\n                \"productName\": \"Men's Jacket\",\n                \"image\": \"default.png\",\n                \"description\": \"Stylish winter jacket for men\",\n                \"quantity\": 29,\n                \"price\": 8999,\n                \"discount\": 15,\n                \"specialPrice\": 7649.15\n            },\n            \"quantity\": 1,\n            \"discount\": 15,\n            \"orderedProductPrice\": 7649.15\n        }\n    ],\n    \"orderDate\": \"2025-02-11\",\n    \"payment\": {\n        \"paymentId\": 2,\n        \"paymentMethod\": \"QRIS\"\n    },\n    \"totalAmount\": 7649.150000000003,\n    \"orderStatus\": \"Order Accepted !\"\n}"
+						}
+					]
+				},
+				{
+					"name": "[PUBLIC] Get User Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/public/users/user2@gmail.com/orders",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"users",
+								"user2@gmail.com",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/public/users/user2@gmail.com/orders",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"public",
+										"users",
+										"user2@gmail.com",
+										"orders"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:39:47 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"orderId\": 2,\n        \"email\": \"user2@gmail.com\",\n        \"orderItems\": [\n            {\n                \"orderItemId\": 2,\n                \"product\": {\n                    \"productId\": 2,\n                    \"productName\": \"Men's Jacket\",\n                    \"image\": \"default.png\",\n                    \"description\": \"Stylish winter jacket for men\",\n                    \"quantity\": 29,\n                    \"price\": 8999,\n                    \"discount\": 15,\n                    \"specialPrice\": 7649.15\n                },\n                \"quantity\": 1,\n                \"discount\": 15,\n                \"orderedProductPrice\": 7649.15\n            }\n        ],\n        \"orderDate\": \"2025-02-11\",\n        \"payment\": {\n            \"paymentId\": 2,\n            \"paymentMethod\": \"QRIS\"\n        },\n        \"totalAmount\": 7649.150000000003,\n        \"orderStatus\": \"Order Accepted !\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "[PUBLIC] Get User Order By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/public/users/user2@gmail.com/orders/2",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"users",
+								"user2@gmail.com",
+								"orders",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/public/users/user2@gmail.com/orders/2",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"public",
+										"users",
+										"user2@gmail.com",
+										"orders",
+										"2"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:40:49 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orderId\": 2,\n    \"email\": \"user2@gmail.com\",\n    \"orderItems\": [\n        {\n            \"orderItemId\": 2,\n            \"product\": {\n                \"productId\": 2,\n                \"productName\": \"Men's Jacket\",\n                \"image\": \"default.png\",\n                \"description\": \"Stylish winter jacket for men\",\n                \"quantity\": 29,\n                \"price\": 8999,\n                \"discount\": 15,\n                \"specialPrice\": 7649.15\n            },\n            \"quantity\": 1,\n            \"discount\": 15,\n            \"orderedProductPrice\": 7649.15\n        }\n    ],\n    \"orderDate\": \"2025-02-11\",\n    \"payment\": {\n        \"paymentId\": 2,\n        \"paymentMethod\": \"QRIS\"\n    },\n    \"totalAmount\": 7649.150000000003,\n    \"orderStatus\": \"Order Accepted !\"\n}"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Get All Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/orders",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/admin/orders",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"orders"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:51:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"orderId\": 2,\n            \"email\": \"user2@gmail.com\",\n            \"orderItems\": [\n                {\n                    \"orderItemId\": 2,\n                    \"product\": {\n                        \"productId\": 2,\n                        \"productName\": \"Men's Jacket\",\n                        \"image\": \"default.png\",\n                        \"description\": \"Stylish winter jacket for men\",\n                        \"quantity\": 29,\n                        \"price\": 8999,\n                        \"discount\": 15,\n                        \"specialPrice\": 7649.15\n                    },\n                    \"quantity\": 1,\n                    \"discount\": 15,\n                    \"orderedProductPrice\": 7649.15\n                }\n            ],\n            \"orderDate\": \"2025-02-11\",\n            \"payment\": {\n                \"paymentId\": 2,\n                \"paymentMethod\": \"QRIS\"\n            },\n            \"totalAmount\": 7649.150000000003,\n            \"orderStatus\": \"WAITING_PAYMENT\"\n        },\n        {\n            \"orderId\": 1,\n            \"email\": \"user1@gmail.com\",\n            \"orderItems\": [\n                {\n                    \"orderItemId\": 1,\n                    \"product\": {\n                        \"productId\": 16,\n                        \"productName\": \"Kopi TUKU\",\n                        \"image\": \"default.png\",\n                        \"description\": \"Ergonomic office chair with adjustable height\",\n                        \"quantity\": 2,\n                        \"price\": 14999,\n                        \"discount\": 12,\n                        \"specialPrice\": 13199.12\n                    },\n                    \"quantity\": 20,\n                    \"discount\": 12,\n                    \"orderedProductPrice\": 13199.12\n                }\n            ],\n            \"orderDate\": \"2025-02-10\",\n            \"payment\": {\n                \"paymentId\": 1,\n                \"paymentMethod\": \"QRIS\"\n            },\n            \"totalAmount\": 263982.4,\n            \"orderStatus\": \"ACCEPTED\"\n        }\n    ],\n    \"pageNumber\": 0,\n    \"pageSize\": 2,\n    \"totalElements\": 2,\n    \"totalPages\": 1,\n    \"lastPage\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Update Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/users/user2@gmail.com/orders/2/orderStatus/WAITING_PAYMENT",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"users",
+								"user2@gmail.com",
+								"orders",
+								"2",
+								"orderStatus",
+								"WAITING_PAYMENT"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/admin/users/user2@gmail.com/orders/2/orderStatus/WAITING_PAYMENT",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"users",
+										"user2@gmail.com",
+										"orders",
+										"2",
+										"orderStatus",
+										"WAITING_PAYMENT"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:50:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orderId\": 2,\n    \"email\": \"user2@gmail.com\",\n    \"orderItems\": [\n        {\n            \"orderItemId\": 2,\n            \"product\": {\n                \"productId\": 2,\n                \"productName\": \"Men's Jacket\",\n                \"image\": \"default.png\",\n                \"description\": \"Stylish winter jacket for men\",\n                \"quantity\": 29,\n                \"price\": 8999,\n                \"discount\": 15,\n                \"specialPrice\": 7649.15\n            },\n            \"quantity\": 1,\n            \"discount\": 15,\n            \"orderedProductPrice\": 7649.15\n        }\n    ],\n    \"orderDate\": \"2025-02-11\",\n    \"payment\": {\n        \"paymentId\": 2,\n        \"paymentMethod\": \"QRIS\"\n    },\n    \"totalAmount\": 7649.150000000003,\n    \"orderStatus\": \"WAITING_PAYMENT\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "[ADMIN] Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productName\": \"Mr. Bread Roti Tawar Kupas\",\r\n  \"image\": \"https://example.com/mr-bread-roti-tawar-kupas.jpg\",\r\n  \"description\": \"Roti Tawar Kupas\",\r\n  \"quantity\": 60,\r\n  \"price\": 16000,\r\n  \"discount\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/categories/16/product",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"categories",
+								"16",
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"productName\": \"Mr. Bread Roti Tawar Kupas\",\r\n  \"image\": \"https://example.com/mr-bread-roti-tawar-kupas.jpg\",\r\n  \"description\": \"Roti Tawar Kupas\",\r\n  \"quantity\": 60,\r\n  \"price\": 16000,\r\n  \"discount\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_API}}/api/admin/categories/16/product",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"categories",
+										"16",
+										"product"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:54:06 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"productId\": 52,\n    \"productName\": \"Mr. Bread Roti Tawar Kupas\",\n    \"image\": \"default.png\",\n    \"description\": \"Roti Tawar Kupas\",\n    \"quantity\": 60,\n    \"price\": 16000,\n    \"discount\": 5,\n    \"specialPrice\": 15200\n}"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productName\": \"Mr. Bread Roti Tawar Kupas - Updated\",\r\n  \"image\": \"https://example.com/mr-bread-roti-tawar-kupas.jpg\",\r\n  \"description\": \"Roti Tawar Kupas\",\r\n  \"quantity\": 60,\r\n  \"price\": 16000,\r\n  \"discount\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/products/52",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"products",
+								"52"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[ADMIN] Update Product",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"productName\": \"Mr. Bread Roti Tawar Kupas - Updated\",\r\n  \"image\": \"https://example.com/mr-bread-roti-tawar-kupas.jpg\",\r\n  \"description\": \"Roti Tawar Kupas\",\r\n  \"quantity\": 60,\r\n  \"price\": 16000,\r\n  \"discount\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_API}}/api/admin/products/52",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"products",
+										"52"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:54:47 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"productId\": 52,\n    \"productName\": \"Mr. Bread Roti Tawar Kupas - Updated\",\n    \"image\": \"default.png\",\n    \"description\": \"Roti Tawar Kupas\",\n    \"quantity\": 60,\n    \"price\": 16000,\n    \"discount\": 5,\n    \"specialPrice\": 15200\n}"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/products/52",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"products",
+								"52"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/admin/products/52",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"products",
+										"52"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 17:00:32 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Product with productId: 52 deleted successfully !!!"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Update Product Image",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"image\": \"http://example.com/mr-bread-roti-tawar-kupas-updated.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/products/52/image",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"products",
+								"52",
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[PUBLIC] Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/public/products?pageSize=10&pageNumber=0&sortBy=productId&sortOrder=asc",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"products"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "pageNumber",
+									"value": "0"
+								},
+								{
+									"key": "sortBy",
+									"value": "productId"
+								},
+								{
+									"key": "sortOrder",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/public/products?pageSize=10&pageNumber=0&sortBy=productId&sortOrder=asc",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"public",
+										"products"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "10"
+										},
+										{
+											"key": "pageNumber",
+											"value": "0"
+										},
+										{
+											"key": "sortBy",
+											"value": "productId"
+										},
+										{
+											"key": "sortOrder",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:59:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"productId\": 1,\n            \"productName\": \"Smartphone\",\n            \"image\": \"default.png\",\n            \"description\": \"Latest model with high-speed processor\",\n            \"quantity\": 30,\n            \"price\": 69999,\n            \"discount\": 2,\n            \"specialPrice\": 68599.02\n        },\n        {\n            \"productId\": 2,\n            \"productName\": \"Men's Jacket\",\n            \"image\": \"default.png\",\n            \"description\": \"Stylish winter jacket for men\",\n            \"quantity\": 29,\n            \"price\": 8999,\n            \"discount\": 15,\n            \"specialPrice\": 7649.15\n        },\n        {\n            \"productId\": 3,\n            \"productName\": \"Non-Stick Cookware Set\",\n            \"image\": \"default.png\",\n            \"description\": \"Durable and easy-to-clean cookware\",\n            \"quantity\": 37,\n            \"price\": 12999,\n            \"discount\": 12,\n            \"specialPrice\": 11439.12\n        },\n        {\n            \"productId\": 4,\n            \"productName\": \"Running Shoes\",\n            \"image\": \"default.png\",\n            \"description\": \"Lightweight and comfortable running shoes\",\n            \"quantity\": 25,\n            \"price\": 7999,\n            \"discount\": 10,\n            \"specialPrice\": 7199.1\n        },\n        {\n            \"productId\": 5,\n            \"productName\": \"Organic Face Cream\",\n            \"image\": \"default.png\",\n            \"description\": \"Hydrating and nourishing organic face cream\",\n            \"quantity\": 60,\n            \"price\": 3999,\n            \"discount\": 5,\n            \"specialPrice\": 3799.05\n        },\n        {\n            \"productId\": 6,\n            \"productName\": \"Car Air Freshener\",\n            \"image\": \"default.png\",\n            \"description\": \"Long-lasting car air freshener with a refreshing scent\",\n            \"quantity\": 100,\n            \"price\": 999,\n            \"discount\": 2,\n            \"specialPrice\": 979.02\n        },\n        {\n            \"productId\": 7,\n            \"productName\": \"Bestselling Novel\",\n            \"image\": \"default.png\",\n            \"description\": \"A thrilling bestseller novel\",\n            \"quantity\": 80,\n            \"price\": 2499,\n            \"discount\": 8,\n            \"specialPrice\": 2299.08\n        },\n        {\n            \"productId\": 8,\n            \"productName\": \"Board Game\",\n            \"image\": \"default.png\",\n            \"description\": \"Fun and engaging board game for family and friends\",\n            \"quantity\": 35,\n            \"price\": 4999,\n            \"discount\": 10,\n            \"specialPrice\": 4499.1\n        },\n        {\n            \"productId\": 9,\n            \"productName\": \"Dog Food\",\n            \"image\": \"default.png\",\n            \"description\": \"Nutritious and tasty dog food for all breeds\",\n            \"quantity\": 90,\n            \"price\": 2999,\n            \"discount\": 5,\n            \"specialPrice\": 2849.05\n        },\n        {\n            \"productId\": 10,\n            \"productName\": \"Organic Coffee Beans\",\n            \"image\": \"default.png\",\n            \"description\": \"Rich and aromatic organic coffee beans\",\n            \"quantity\": 70,\n            \"price\": 1999,\n            \"discount\": 7,\n            \"specialPrice\": 1859.07\n        }\n    ],\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"totalElements\": 17,\n    \"totalPages\": 2,\n    \"lastPage\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "[PUBLIC] Get Products By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/public/categories/16/products?pageNumber=10",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"categories",
+								"16",
+								"products"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/public/categories/16/products?pageNumber=10",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"public",
+										"categories",
+										"16",
+										"products"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 16:59:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Food & Beverages category doesn't contain any products !!!\",\n    \"status\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "[PUBLIC] Get Products By Keyword",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/public/products/keyword/Smart",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"products",
+								"keyword",
+								"Smart"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/public/products/keyword/Smart",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"public",
+										"products",
+										"keyword",
+										"Smart"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 17:00:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"productId\": 1,\n            \"productName\": \"Smartphone\",\n            \"image\": \"default.png\",\n            \"description\": \"Latest model with high-speed processor\",\n            \"quantity\": 30,\n            \"price\": 69999,\n            \"discount\": 2,\n            \"specialPrice\": 68599.02\n        }\n    ],\n    \"pageNumber\": 0,\n    \"pageSize\": 2,\n    \"totalElements\": 1,\n    \"totalPages\": 1,\n    \"lastPage\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "[ADMIN] Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/users",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/admin/users",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"users"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 17:02:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"userId\": 4,\n            \"firstName\": \"Jonathan\",\n            \"lastName\": \"Doeherty\",\n            \"mobileNumber\": \"0812345671\",\n            \"email\": \"user1@gmail.com\",\n            \"password\": \"$2a$10$ShCDwtx2Pj.MtS3IWO6xK.LBAyFAIY8/cqk8UirPMWERq6zbf6daa\",\n            \"roles\": [\n                {\n                    \"roleId\": 102,\n                    \"roleName\": \"USER\"\n                }\n            ],\n            \"address\": {\n                \"addressId\": 4,\n                \"street\": \"Jl. Sudirman No. 12\",\n                \"buildingName\": \"Apartemen Mawar\",\n                \"city\": \"Jakarta\",\n                \"state\": \"DKI Jakarta\",\n                \"country\": \"Indonesia\",\n                \"pincode\": \"102201\"\n            },\n            \"cart\": {\n                \"cartId\": 6,\n                \"totalPrice\": 0,\n                \"products\": []\n            }\n        },\n        {\n            \"userId\": 5,\n            \"firstName\": \"Michaelangelo\",\n            \"lastName\": \"Robertson\",\n            \"mobileNumber\": \"0812345672\",\n            \"email\": \"user2@gmail.com\",\n            \"password\": \"$2a$10$qmfwnLwsnvwCLGLTyzQhhOZrUD7iWi8dJTyno57vJstbBWRr1lPtG\",\n            \"roles\": [\n                {\n                    \"roleId\": 102,\n                    \"roleName\": \"USER\"\n                }\n            ],\n            \"address\": {\n                \"addressId\": 5,\n                \"street\": \"Jl. Gatot Subroto No. 7\",\n                \"buildingName\": \"Rumah Hijau\",\n                \"city\": \"Bandung\",\n                \"state\": \"Jawa Barat\",\n                \"country\": \"Indonesia\",\n                \"pincode\": \"401234\"\n            },\n            \"cart\": {\n                \"cartId\": 7,\n                \"totalPrice\": 73914.72,\n                \"products\": [\n                    {\n                        \"productId\": 3,\n                        \"productName\": \"Non-Stick Cookware Set\",\n                        \"image\": \"default.png\",\n                        \"description\": \"Durable and easy-to-clean cookware\",\n                        \"quantity\": 37,\n                        \"price\": 12999,\n                        \"discount\": 12,\n                        \"specialPrice\": 11439.12\n                    },\n                    {\n                        \"productId\": 16,\n                        \"productName\": \"Kopi TUKU\",\n                        \"image\": \"default.png\",\n                        \"description\": \"Ergonomic office chair with adjustable height\",\n                        \"quantity\": 2,\n                        \"price\": 14999,\n                        \"discount\": 12,\n                        \"specialPrice\": 13199.12\n                    }\n                ]\n            }\n        }\n    ],\n    \"pageNumber\": 0,\n    \"pageSize\": 2,\n    \"totalElements\": 11,\n    \"totalPages\": 6,\n    \"lastPage\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "[ADMIN] Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/admin/users/4",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/admin/users/4",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"users",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 17:09:50 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "User with userId 4 deleted successfully!!!"
+						}
+					]
+				},
+				{
+					"name": "[PUBLIC] Get User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API}}/api/public/users/5",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"users",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_API}}/api/public/users/5",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"public",
+										"users",
+										"5"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 17:12:10 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userId\": 5,\n    \"firstName\": \"Michaelangelo\",\n    \"lastName\": \"Robertson\",\n    \"mobileNumber\": \"0812345672\",\n    \"email\": \"user2@gmail.com\",\n    \"password\": \"$2a$10$qmfwnLwsnvwCLGLTyzQhhOZrUD7iWi8dJTyno57vJstbBWRr1lPtG\",\n    \"roles\": [\n        {\n            \"roleId\": 102,\n            \"roleName\": \"USER\"\n        }\n    ],\n    \"address\": {\n        \"addressId\": 5,\n        \"street\": \"Jl. Gatot Subroto No. 7\",\n        \"buildingName\": \"Rumah Hijau\",\n        \"city\": \"Bandung\",\n        \"state\": \"Jawa Barat\",\n        \"country\": \"Indonesia\",\n        \"pincode\": \"401234\"\n    },\n    \"cart\": {\n        \"cartId\": 7,\n        \"totalPrice\": 73914.72,\n        \"products\": [\n            {\n                \"productId\": 3,\n                \"productName\": \"Non-Stick Cookware Set\",\n                \"image\": \"default.png\",\n                \"description\": \"Durable and easy-to-clean cookware\",\n                \"quantity\": 37,\n                \"price\": 12999,\n                \"discount\": 12,\n                \"specialPrice\": 11439.12\n            },\n            {\n                \"productId\": 16,\n                \"productName\": \"Kopi TUKU\",\n                \"image\": \"default.png\",\n                \"description\": \"Ergonomic office chair with adjustable height\",\n                \"quantity\": 2,\n                \"price\": 14999,\n                \"discount\": 12,\n                \"specialPrice\": 13199.12\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "[PUBLIC] Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 5,\r\n    \"firstName\": \"MichaelUpdated\",\r\n    \"lastName\": \"Robertson\",\r\n    \"mobileNumber\": \"0812345672\",\r\n    \"email\": \"user2@gmail.com\",\r\n    \"password\": \"$2a$10$qmfwnLwsnvwCLGLTyzQhhOZrUD7iWi8dJTyno57vJstbBWRr1lPtG\",\r\n    \"roles\": [\r\n        {\r\n            \"roleId\": 102,\r\n            \"roleName\": \"USER\"\r\n        }\r\n    ],\r\n    \"address\": {\r\n        \"addressId\": 5,\r\n        \"street\": \"Jl. Gatot Subroto No. 7\",\r\n        \"buildingName\": \"Rumah Hijau\",\r\n        \"city\": \"Bandung\",\r\n        \"state\": \"Jawa Barat\",\r\n        \"country\": \"Indonesia\",\r\n        \"pincode\": \"401234\"\r\n    },\r\n    \"cart\": {\r\n        \"cartId\": 7,\r\n        \"totalPrice\": 73914.72,\r\n        \"products\": [\r\n            {\r\n                \"productId\": 3,\r\n                \"productName\": \"Non-Stick Cookware Set\",\r\n                \"image\": \"default.png\",\r\n                \"description\": \"Durable and easy-to-clean cookware\",\r\n                \"quantity\": 37,\r\n                \"price\": 12999.0,\r\n                \"discount\": 12.0,\r\n                \"specialPrice\": 11439.12\r\n            },\r\n            {\r\n                \"productId\": 16,\r\n                \"productName\": \"Kopi TUKU\",\r\n                \"image\": \"default.png\",\r\n                \"description\": \"Ergonomic office chair with adjustable height\",\r\n                \"quantity\": 2,\r\n                \"price\": 14999.0,\r\n                \"discount\": 12.0,\r\n                \"specialPrice\": 13199.12\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API}}/api/public/users/5",
+							"host": [
+								"{{BASE_API}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"users",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": 5,\r\n    \"firstName\": \"MichaelUpdated\",\r\n    \"lastName\": \"Robertson\",\r\n    \"mobileNumber\": \"0812345672\",\r\n    \"email\": \"user2@gmail.com\",\r\n    \"password\": \"$2a$10$qmfwnLwsnvwCLGLTyzQhhOZrUD7iWi8dJTyno57vJstbBWRr1lPtG\",\r\n    \"roles\": [\r\n        {\r\n            \"roleId\": 102,\r\n            \"roleName\": \"USER\"\r\n        }\r\n    ],\r\n    \"address\": {\r\n        \"addressId\": 5,\r\n        \"street\": \"Jl. Gatot Subroto No. 7\",\r\n        \"buildingName\": \"Rumah Hijau\",\r\n        \"city\": \"Bandung\",\r\n        \"state\": \"Jawa Barat\",\r\n        \"country\": \"Indonesia\",\r\n        \"pincode\": \"401234\"\r\n    },\r\n    \"cart\": {\r\n        \"cartId\": 7,\r\n        \"totalPrice\": 73914.72,\r\n        \"products\": [\r\n            {\r\n                \"productId\": 3,\r\n                \"productName\": \"Non-Stick Cookware Set\",\r\n                \"image\": \"default.png\",\r\n                \"description\": \"Durable and easy-to-clean cookware\",\r\n                \"quantity\": 37,\r\n                \"price\": 12999.0,\r\n                \"discount\": 12.0,\r\n                \"specialPrice\": 11439.12\r\n            },\r\n            {\r\n                \"productId\": 16,\r\n                \"productName\": \"Kopi TUKU\",\r\n                \"image\": \"default.png\",\r\n                \"description\": \"Ergonomic office chair with adjustable height\",\r\n                \"quantity\": 2,\r\n                \"price\": 14999.0,\r\n                \"discount\": 12.0,\r\n                \"specialPrice\": 13199.12\r\n            }\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_API}}/api/public/users/5",
+									"host": [
+										"{{BASE_API}}"
+									],
+									"path": [
+										"api",
+										"public",
+										"users",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 17:15:10 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userId\": 5,\n    \"firstName\": \"MichaelUpdated\",\n    \"lastName\": \"Robertson\",\n    \"mobileNumber\": \"0812345672\",\n    \"email\": \"user2@gmail.com\",\n    \"password\": \"$2a$10$SuyupWASxClfmec3fd0yHOudGZtMZHwCKCw0AQdacy.FfPWbEx3tu\",\n    \"roles\": [\n        {\n            \"roleId\": 102,\n            \"roleName\": \"USER\"\n        }\n    ],\n    \"address\": {\n        \"addressId\": 5,\n        \"street\": \"Jl. Gatot Subroto No. 7\",\n        \"buildingName\": \"Rumah Hijau\",\n        \"city\": \"Bandung\",\n        \"state\": \"Jawa Barat\",\n        \"country\": \"Indonesia\",\n        \"pincode\": \"401234\"\n    },\n    \"cart\": {\n        \"cartId\": 7,\n        \"totalPrice\": 73914.72,\n        \"products\": [\n            {\n                \"productId\": 3,\n                \"productName\": \"Non-Stick Cookware Set\",\n                \"image\": \"default.png\",\n                \"description\": \"Durable and easy-to-clean cookware\",\n                \"quantity\": 37,\n                \"price\": 12999,\n                \"discount\": 12,\n                \"specialPrice\": 11439.12\n            },\n            {\n                \"productId\": 16,\n                \"productName\": \"Kopi TUKU\",\n                \"image\": \"default.png\",\n                \"description\": \"Ergonomic office chair with adjustable height\",\n                \"quantity\": 2,\n                \"price\": 14999,\n                \"discount\": 12,\n                \"specialPrice\": 13199.12\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_API",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
