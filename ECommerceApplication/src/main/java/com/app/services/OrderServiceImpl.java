@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.app.entites.payment.PaymentFactory;
+import com.app.payloads.*;
+import com.app.payloads.mapper.PaymentMapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -17,13 +20,10 @@ import com.app.entites.Cart;
 import com.app.entites.CartItem;
 import com.app.entites.Order;
 import com.app.entites.OrderItem;
-import com.app.entites.Payment;
+import com.app.entites.payment.Payment;
 import com.app.entites.Product;
 import com.app.exceptions.APIException;
 import com.app.exceptions.ResourceNotFoundException;
-import com.app.payloads.OrderDTO;
-import com.app.payloads.OrderItemDTO;
-import com.app.payloads.OrderResponse;
 import com.app.repositories.CartItemRepo;
 import com.app.repositories.CartRepo;
 import com.app.repositories.OrderItemRepo;
@@ -65,7 +65,7 @@ public class OrderServiceImpl implements OrderService {
 	public ModelMapper modelMapper;
 
 	@Override
-	public OrderDTO placeOrder(String email, Long cartId, String paymentMethod) {
+	public OrderDTO placeOrder(String email, Long cartId, String paymentMethod, PaymentRequest paymentRequest) {
 
 		Cart cart = cartRepo.findCartByEmailAndCartId(email, cartId);
 
@@ -81,10 +81,8 @@ public class OrderServiceImpl implements OrderService {
 		order.setTotalAmount(cart.getTotalPrice());
 		order.setOrderStatus("Order Accepted !");
 
-		Payment payment = new Payment();
+		Payment payment = PaymentFactory.createPayment(paymentMethod, paymentRequest);
 		payment.setOrder(order);
-		payment.setPaymentMethod(paymentMethod);
-
 		payment = paymentRepo.save(payment);
 
 		order.setPayment(payment);
@@ -93,7 +91,7 @@ public class OrderServiceImpl implements OrderService {
 
 		List<CartItem> cartItems = cart.getCartItems();
 
-		if (cartItems.size() == 0) {
+		if (cartItems.isEmpty()) {
 			throw new APIException("Cart is empty");
 		}
 
@@ -124,7 +122,9 @@ public class OrderServiceImpl implements OrderService {
 		});
 
 		OrderDTO orderDTO = modelMapper.map(savedOrder, OrderDTO.class);
-		
+		PaymentResponse paymentResponse = PaymentMapper.toPaymentResponse(savedOrder.getPayment());
+		orderDTO.setPayment(paymentResponse);
+
 		orderItems.forEach(item -> orderDTO.getOrderItems().add(modelMapper.map(item, OrderItemDTO.class)));
 
 		return orderDTO;
@@ -137,7 +137,7 @@ public class OrderServiceImpl implements OrderService {
 		List<OrderDTO> orderDTOs = orders.stream().map(order -> modelMapper.map(order, OrderDTO.class))
 				.collect(Collectors.toList());
 
-		if (orderDTOs.size() == 0) {
+		if (orderDTOs.isEmpty()) {
 			throw new APIException("No orders placed yet by the user with email: " + email);
 		}
 

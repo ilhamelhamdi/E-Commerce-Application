@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PaymentDTO {
+public class PaymentResponse {
 	private Long paymentId;
 	private String paymentMethod;
-
+	private AddressDTO address;
 }

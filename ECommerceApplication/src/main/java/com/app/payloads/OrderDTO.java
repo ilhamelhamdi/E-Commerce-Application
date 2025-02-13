@@ -17,7 +17,7 @@ public class OrderDTO {
 	private String email;
 	private List<OrderItemDTO> orderItems = new ArrayList<>();
 	private LocalDate orderDate;
-	private PaymentDTO payment;
+	private PaymentResponse payment;
 	private Double totalAmount;
 	private String orderStatus;
 
