@@ -3,35 +3,29 @@ package com.app.services;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.app.entites.*;
+import com.app.repositories.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import com.app.entites.Cart;
-import com.app.entites.CartItem;
-import com.app.entites.Order;
-import com.app.entites.OrderItem;
-import com.app.entites.Payment;
-import com.app.entites.Product;
 import com.app.exceptions.APIException;
 import com.app.exceptions.ResourceNotFoundException;
 import com.app.payloads.OrderDTO;
 import com.app.payloads.OrderItemDTO;
 import com.app.payloads.OrderResponse;
-import com.app.repositories.CartItemRepo;
-import com.app.repositories.CartRepo;
-import com.app.repositories.OrderItemRepo;
-import com.app.repositories.OrderRepo;
-import com.app.repositories.PaymentRepo;
-import com.app.repositories.UserRepo;
 
 import jakarta.transaction.Transactional;
+import org.springframework.web.server.ResponseStatusException;
+import org.webjars.NotFoundException;
 
 @Transactional
 @Service
@@ -42,6 +36,9 @@ public class OrderServiceImpl implements OrderService {
 
 	@Autowired
 	public CartRepo cartRepo;
+
+	@Autowired
+	public CouponRepo couponRepo;
 
 	@Autowired
 	public OrderRepo orderRepo;
@@ -65,7 +62,7 @@ public class OrderServiceImpl implements OrderService {
 	public ModelMapper modelMapper;
 
 	@Override
-	public OrderDTO placeOrder(String email, Long cartId, String paymentMethod) {
+	public OrderDTO placeOrder(String email, Long cartId, String paymentMethod, Long couponId) {
 
 		Cart cart = cartRepo.findCartByEmailAndCartId(email, cartId);
 
@@ -80,6 +77,21 @@ public class OrderServiceImpl implements OrderService {
 
 		order.setTotalAmount(cart.getTotalPrice());
 		order.setOrderStatus("Order Accepted !");
+
+		if (couponId != null) {
+			Optional<Coupon> optCoupon = couponRepo.findById(couponId);
+			if (optCoupon.isEmpty()) {
+				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Coupon not found!");
+			}
+			Coupon coupon = optCoupon.get();
+
+			if (!coupon.getIsActive()) {
+				throw new ResponseStatusException(HttpStatus.FORBIDDEN, "This coupon is used");
+			}
+			coupon.setIsActive(false);
+			couponRepo.save(coupon);
+			order.setTotalAmount(order.getTotalAmount() - order.getTotalAmount() * coupon.getDiscount()); // Misalnya diskon 10%
+		}
 
 		Payment payment = new Payment();
 		payment.setOrder(order);
