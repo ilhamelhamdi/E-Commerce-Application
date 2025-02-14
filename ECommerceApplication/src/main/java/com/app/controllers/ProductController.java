@@ -65,7 +65,20 @@ public class ProductController {
 
 		return new ResponseEntity<ProductResponse>(productResponse, HttpStatus.FOUND);
 	}
-	
+
+	@GetMapping("/public/brands/{brandId}/products")
+	public ResponseEntity<ProductResponse> getProductsByBrand(@PathVariable Long brandId,
+			 @RequestParam(name = "pageNumber", defaultValue = AppConstants.PAGE_NUMBER, required = false) Integer pageNumber,
+			 @RequestParam(name = "pageSize", defaultValue = AppConstants.PAGE_SIZE, required = false) Integer pageSize,
+			 @RequestParam(name = "sortBy", defaultValue = AppConstants.SORT_PRODUCTS_BY, required = false) String sortBy,
+			 @RequestParam(name = "sortOrder", defaultValue = AppConstants.SORT_DIR, required = false) String sortOrder) {
+
+		ProductResponse productResponse = productService.filterByBrand(brandId, pageNumber, pageSize, sortBy,
+				sortOrder);
+
+		return new ResponseEntity<>(productResponse, HttpStatus.FOUND);
+	}
+
 	@GetMapping("/public/products/keyword/{keyword}")
 	public ResponseEntity<ProductResponse> getProductsByKeyword(@PathVariable String keyword,
 			@RequestParam(name = "pageNumber", defaultValue = AppConstants.PAGE_NUMBER, required = false) Integer pageNumber,
@@ -86,7 +99,7 @@ public class ProductController {
 
 		return new ResponseEntity<ProductDTO>(updatedProduct, HttpStatus.OK);
 	}
-	
+
 	@PutMapping("/admin/products/{productId}/image")
 	public ResponseEntity<ProductDTO> updateProductImage(@PathVariable Long productId, @RequestParam("image") MultipartFile image) throws IOException {
 		ProductDTO updatedProduct = productService.updateProductImage(productId, image);
