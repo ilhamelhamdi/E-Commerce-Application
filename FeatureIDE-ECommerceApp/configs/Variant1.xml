@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="ECommerceApp"/>
+	<feature automatic="selected" name="Authentication"/>
+	<feature automatic="selected" name="Payment"/>
+	<feature automatic="selected" name="Product"/>
+	<feature manual="selected" name="Filter"/>
+	<feature name="Category"/>
+	<feature name="Keyword"/>
+	<feature name="Brand"/>
+	<feature name="Coupon"/>
+	<feature automatic="selected" name="User"/>
+	<feature automatic="selected" name="Order"/>
+	<feature automatic="selected" name="Cart"/>
+	<feature name="Wishlist"/>
+</configuration>
