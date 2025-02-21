@@ -5,6 +5,8 @@ import java.util.List;
 
 public interface WishlistService {
 
+    List<WishlistDTO> getAllWishlists();
+
     WishlistDTO addToWishlist(String userEmail, Long productId);
 
     List<WishlistDTO> getUserWishlist(String userEmail);

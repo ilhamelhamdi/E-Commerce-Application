@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="ECommerceApp">
+			<feature mandatory="true" name="Authentication"/>
+			<feature mandatory="true" name="Payment"/>
+			<and mandatory="true" name="Product">
+				<or name="Filter">
+					<feature name="Category"/>
+					<feature name="ByBrand"/>
+					<feature name="Keyword"/>
+				</or>
+			</and>
+			<feature name="Coupon"/>
+			<feature mandatory="true" name="User"/>
+			<feature mandatory="true" name="Order"/>
+			<feature mandatory="true" name="Cart"/>
+			<feature name="Wishlist"/>
+			<feature name="Brand"/>
+		</and>
+	</struct>
+</featureModel>

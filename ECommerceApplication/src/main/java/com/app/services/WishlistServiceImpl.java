@@ -45,6 +45,15 @@ public class WishlistServiceImpl implements WishlistService {
         private ModelMapper modelMapper;
 
         @Override
+        public List<WishlistDTO> getAllWishlists() {
+                List<Wishlist> wishlists = wishlistRepo.findAll();
+
+                return wishlists.stream()
+                                .map(wishlist -> modelMapper.map(wishlist, WishlistDTO.class))
+                                .toList();
+        }
+
+        @Override
         public WishlistDTO addToWishlist(String userEmail, Long productId) {
                 // Find the user
                 User user = userRepo.findByEmail(userEmail)

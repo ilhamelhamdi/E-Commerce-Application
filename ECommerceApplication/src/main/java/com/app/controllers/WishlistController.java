@@ -21,6 +21,12 @@ public class WishlistController {
     @Autowired
     private WishlistService wishlistService;
 
+    @GetMapping("/admin/wishlists")
+    public ResponseEntity<List<WishlistDTO>> getAllWishlists() {
+        List<WishlistDTO> wishlists = wishlistService.getAllWishlists();
+        return new ResponseEntity<>(wishlists, HttpStatus.OK);
+    }
+
     @PostMapping("/public/users/{email}/wishlist/{productId}")
     public ResponseEntity<WishlistDTO> addToWishlist(
             @PathVariable String email,
