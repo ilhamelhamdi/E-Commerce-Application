@@ -1,5 +1,6 @@
 package com.app.controllers;
 
+import com.app.payloads.APIResponse;
 import com.app.payloads.WishlistDTO;
 import com.app.services.WishlistService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -8,7 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -35,11 +38,15 @@ public class WishlistController {
     }
 
     @DeleteMapping("/public/users/{email}/wishlist/{productId}")
-    public ResponseEntity<String> removeFromWishlist(
+    public ResponseEntity<APIResponse> removeFromWishlist(
             @PathVariable String email,
             @PathVariable Long productId) {
 
         wishlistService.removeFromWishlist(email, productId);
-        return new ResponseEntity<>("Product removed from wishlist successfully!", HttpStatus.OK);
+
+        return new ResponseEntity<APIResponse>(
+                new APIResponse("Product removed from wishlist successfully!", true),
+                HttpStatus.OK);
     }
+
 }

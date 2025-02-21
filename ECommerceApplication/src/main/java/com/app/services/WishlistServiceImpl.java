@@ -3,6 +3,7 @@ package com.app.services;
 import com.app.entites.User;
 import com.app.entites.Product;
 import com.app.entites.Wishlist;
+import com.app.exceptions.APIException;
 import com.app.exceptions.ResourceNotFoundException;
 import com.app.payloads.WishlistDTO;
 import com.app.repositories.UserRepo;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Optional;
 
 @Transactional
 @Service
@@ -75,6 +77,13 @@ public class WishlistServiceImpl implements WishlistService {
                 // Find the product
                 Product product = productRepo.findById(productId)
                                 .orElseThrow(() -> new ResourceNotFoundException("Product", "productId", productId));
+
+                // Check if the product exists in the wishlist before deleting
+                Optional<Wishlist> wishlistItem = wishlistRepo.findByUserAndProduct(user, product);
+
+                if (wishlistItem.isEmpty()) {
+                        throw new APIException("Product is not in the wishlist!");
+                }
 
                 // Remove from wishlist
                 wishlistRepo.deleteByUserAndProduct(user, product);
