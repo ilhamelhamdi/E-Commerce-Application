@@ -22,43 +22,45 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 @RequestMapping("/api")
 @SecurityRequirement(name = "E-Commerce Application")
 public class CartController {
-	
+
 	@Autowired
 	private CartService cartService;
 
 	@PostMapping("/public/carts/{cartId}/products/{productId}/quantity/{quantity}")
-	public ResponseEntity<CartDTO> addProductToCart(@PathVariable Long cartId, @PathVariable Long productId, @PathVariable Integer quantity) {
+	public ResponseEntity<CartDTO> addProductToCart(@PathVariable Long cartId, @PathVariable Long productId,
+			@PathVariable Integer quantity) {
 		CartDTO cartDTO = cartService.addProductToCart(cartId, productId, quantity);
-		
+
 		return new ResponseEntity<CartDTO>(cartDTO, HttpStatus.CREATED);
 	}
-	
+
 	@GetMapping("/admin/carts")
 	public ResponseEntity<List<CartDTO>> getCarts() {
-		
+
 		List<CartDTO> cartDTOs = cartService.getAllCarts();
-		
+
 		return new ResponseEntity<List<CartDTO>>(cartDTOs, HttpStatus.FOUND);
 	}
-	
+
 	@GetMapping("/public/users/{email}/carts/{cartId}")
 	public ResponseEntity<CartDTO> getCartById(@PathVariable String email, @PathVariable Long cartId) {
 		CartDTO cartDTO = cartService.getCart(email, cartId);
-		
+
 		return new ResponseEntity<CartDTO>(cartDTO, HttpStatus.FOUND);
 	}
-	
+
 	@PutMapping("/public/carts/{cartId}/products/{productId}/quantity/{quantity}")
-	public ResponseEntity<CartDTO> updateCartProduct(@PathVariable Long cartId, @PathVariable Long productId, @PathVariable Integer quantity) {
+	public ResponseEntity<CartDTO> updateCartProduct(@PathVariable Long cartId, @PathVariable Long productId,
+			@PathVariable Integer quantity) {
 		CartDTO cartDTO = cartService.updateProductQuantityInCart(cartId, productId, quantity);
-		
+
 		return new ResponseEntity<CartDTO>(cartDTO, HttpStatus.OK);
 	}
-	
+
 	@DeleteMapping("/public/carts/{cartId}/product/{productId}")
 	public ResponseEntity<String> deleteProductFromCart(@PathVariable Long cartId, @PathVariable Long productId) {
 		String status = cartService.deleteProductFromCart(cartId, productId);
-		
+
 		return new ResponseEntity<String>(status, HttpStatus.OK);
 	}
 }
