@@ -49,4 +49,14 @@ public class WishlistController {
                 HttpStatus.OK);
     }
 
+    @PostMapping("/public/users/{email}/wishlist/{productId}/move-to-cart")
+    public ResponseEntity<APIResponse> moveToCart(
+            @PathVariable String email,
+            @PathVariable Long productId) {
+
+        wishlistService.moveToCart(email, productId);
+
+        return new ResponseEntity<>(new APIResponse("Product moved to cart successfully!", true), HttpStatus.OK);
+    }
+
 }

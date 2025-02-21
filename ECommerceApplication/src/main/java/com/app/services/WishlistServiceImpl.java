@@ -1,6 +1,8 @@
 package com.app.services;
 
 import com.app.entites.User;
+import com.app.entites.Cart;
+import com.app.entites.CartItem;
 import com.app.entites.Product;
 import com.app.entites.Wishlist;
 import com.app.exceptions.APIException;
@@ -9,6 +11,8 @@ import com.app.payloads.WishlistDTO;
 import com.app.repositories.UserRepo;
 import com.app.repositories.ProductRepo;
 import com.app.repositories.WishlistRepo;
+import com.app.repositories.CartRepo;
+import com.app.repositories.CartItemRepo;
 import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +34,12 @@ public class WishlistServiceImpl implements WishlistService {
 
         @Autowired
         private ProductRepo productRepo;
+
+        @Autowired
+        private CartRepo cartRepo;
+
+        @Autowired
+        private CartItemRepo cartItemRepo;
 
         @Autowired
         private ModelMapper modelMapper;
@@ -88,4 +98,42 @@ public class WishlistServiceImpl implements WishlistService {
                 // Remove from wishlist
                 wishlistRepo.deleteByUserAndProduct(user, product);
         }
+
+        @Override
+        public void moveToCart(String email, Long productId) {
+                // Find the user
+                User user = userRepo.findByEmail(email)
+                                .orElseThrow(() -> new ResourceNotFoundException("User", "email", email));
+
+                // Find the product
+                Product product = productRepo.findById(productId)
+                                .orElseThrow(() -> new ResourceNotFoundException("Product", "productId", productId));
+
+                // Check if the product is in the wishlist
+                Wishlist wishlistItem = wishlistRepo.findByUserAndProduct(user, product)
+                                .orElseThrow(() -> new APIException("Product is not in the wishlist!"));
+
+                // Find or create the user's cart
+                Cart cart = cartRepo.findCartByEmailAndCartId(email, user.getCart().getCartId());
+                if (cart == null) {
+                        cart = new Cart();
+                        cart.setUser(user);
+                        cart.setTotalPrice(0.0);
+                        cart = cartRepo.save(cart);
+                }
+
+                // Add the product to the cart
+                CartItem cartItem = new CartItem();
+                cartItem.setCart(cart);
+                cartItem.setProduct(product);
+                cartItem.setQuantity(1); // Default to 1 quantity
+                cartItem.setProductPrice(product.getPrice());
+                cartItem.setDiscount(product.getDiscount());
+
+                cartItemRepo.save(cartItem);
+
+                // Remove the product from the wishlist
+                wishlistRepo.delete(wishlistItem);
+        }
+
 }
